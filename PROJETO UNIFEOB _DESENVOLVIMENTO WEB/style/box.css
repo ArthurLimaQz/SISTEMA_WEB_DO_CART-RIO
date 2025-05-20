@@ -1,0 +1,66 @@
+.box_1 {
+    background-color: #E2CE1A;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    margin-right: 40vw;
+    margin-left: 40vw;
+    display: flex;
+}
+
+.box_2 {
+    background-color: #FEFAA1;
+    border-radius: 1vw;
+    margin: 10px 10px 10px 10px;
+    display: flex;
+    width: 20vw;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25)
+}
+
+.box_3 {
+    background-color: #36320A;
+    border-bottom-left-radius:1vw;
+    border-top-left-radius: 1vw;
+    display: flex;
+    width: 5vw;
+}
+
+.box_login {
+    display: flex;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.texto_login {
+    margin-left: 8vw;
+    display: flex;
+    position: static;
+}
+
+.entrada_login {
+    margin-left: 6vw;
+    margin-top: 1vw;
+    display: flex;
+
+}
+
+.texto_senha {
+    margin-left: 6vw;
+    margin-top: 2vw;
+    display: flex;
+    position: relative;
+}
+
+#conteiner {
+    display: grid;
+    grid-template-columns: 4vw 4vw;
+    gap: 20px;      
+    
+}
+
+.botao{
+    margin-left: 6.5vw;
+    margin-top: 0.5vw;
+    margin-bottom: 3px;
+    position: relative;
+    font-size: 0.9vw;    
+}
