@@ -1,4 +1,4 @@
-.sidebar{
+/* .sidebar{
     background-color: rgb(0, 141, 223);
     height: 5vw;
     margin-top: 1vw;
@@ -14,11 +14,10 @@
     display: flex;
     gap: 20px;
     list-style: none; /* Remove as bolinhas */
-    padding: 0;
-    margin: 0;
-}
+    
+/* }* */
 
-.conteiner a{
+/* .conteiner a{
     text-decoration: none;
 }
 .conteiner span{
@@ -38,4 +37,4 @@
     bottom: 7.2vw;
     gap: 20px;
     font-family: 'Courier New', Courier, monospace;
-}
+} */

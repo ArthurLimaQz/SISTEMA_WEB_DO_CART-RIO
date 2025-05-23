@@ -10,19 +10,21 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-warning mt-2" >
-        <div class="container-fluid text-center">
-            <div class="p-3 m-0 border-0 bd-example">
-                <img src="SRC/Minimal_Professional_Lawyer_Firm_Justice___Law_Logo-removebg-preview.png" alt=""
-                    class="img-fluid rounded float-start " width="10%" height="250">
-            </div>
-            <a class="navbar-brand" href="#">Inicio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+    <div class="menu">
+        <div class="content navbar">
+            <img src="SRC/Minimal Professional Lawyer Firm Justice & Law Logo.png" alt="Logo" class="imagem">
+            <!-- <a class="navbar-brand" href="#">Inicio</a> -->
+
+            <button class="navbar-toggler menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav lista-mobile">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Registrar</a>
                     </li>
@@ -47,58 +49,65 @@
                     </li>
                 </ul>
             </div>
-        </div>
-    </nav>
-
-    <main>
-        <div class="box_1"><!--Box laranja-->
-            <div class="box_2"><!--Box amarelo-->
-                <div class="box_3"> <!--Box marrom-->
-                    <div class="box_login">
-                        <!--Login-->
-                        <div>
-                            <div class="texto_login ">
-                                <label for="inputText" class="col-form-label">Login</label>
-                            </div>
-                            <div class="row g-3 align-items-center">
-                                <div class="entrada_login">
-                                    <input type="text" id="inputText" placeholder="Username"
-                                        class="form-control bg-warning" aria-describedby="passwordHelpInline">
-                                </div>
-                            </div>
-
-                            <!--Senha-->
-                            <div class="row g-3 align-items-center">
-
-                                <div class="texto_senha">
-                                    <input type="password" id="inputPassword6" placeholder="Password"
-                                        class="form-control bg-warning " aria-describedby="passwordHelpInline">
-                                </div>
-                            </div>
-                            <!------------------------------------->
-                            <div id="conteiner">
-                                <div class="botao">
-                                    <button type="button" class="btn btn-warning text-white">Login</button>
-                                </div>
-                                <div class="botao">
-                                    <button type="button" class="btn btn-warning text-white">Registrar</button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+            <div class="lista-box">
+                <ul class="lista-desk">
+                    <li class="menu-item">
+                        <a class="menu-link">Inicio</a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link">Registrar</a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link">Nascimento</a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link">Casamento</a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link">Óbito</a> <!-- Se quiser desabilitar a função só adicionar junto ao nav disabled e trocar o
+                        aria-disabled por href="...."-->
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link">HAIA</a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link">Contato</a>
+                    </li>
+                    <li class="menu-item">
+                        <a class="menu-link">Registrar/Login</a>
+                    </li>
+                </ul>
             </div>
-
-
-
-
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-    </main>
+        </div>
     </div>
 
 
+    <main>
+        <section class="conteudo">
+            <div class="detalhe"></div>
+            <div class="principal">
+                <h1 class="titulo">Login</h1>
+                <div class="login-box">
+                    <form action="submit" class="form">
+                        <label for="login"></label> <!--significado: etiqueta login-->
+                        <input type="text" name="login" id="login" class="input input-login" placeholder="Username"
+                            required>
+                        <label for="password"></label> <!--significado: etiqueta Senha-->
+                        <input type="password" name="password" id="password" class="input input-password"
+                            placeholder="Password" required>
+                        <div class="btn-box">
+                            <button type="submit" class="btn-login form-btn">Login</button>
+                            <button class="btn-cadastro form-btn">Cadastrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
