@@ -223,11 +223,11 @@ main {
     width: 100%;
     height: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 16px;
     margin-top: 16px;
-    flex-flow: row wrap;
 }
 
 .form-btn {
@@ -252,4 +252,23 @@ main {
 .form-btn:hover{
     scale: 0.95;
     box-shadow: none;
+}
+
+.btn-cadastro{
+    text-decoration: none;
+    color:  #968812;
+    
+}
+
+.btn-cadastro:hover{
+    text-decoration: underline;
+}
+
+.link-cadastro{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+.link-cadastro > span {
+    color: #36320A;
 }
