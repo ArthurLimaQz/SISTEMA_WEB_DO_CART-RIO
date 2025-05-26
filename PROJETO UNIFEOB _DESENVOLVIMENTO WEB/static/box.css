@@ -249,26 +249,45 @@ main {
     font-size: 1em;
 }
 
-.form-btn:hover{
+.form-btn:hover {
     scale: 0.95;
     box-shadow: none;
 }
 
-.btn-cadastro{
+.btn-cadastro {
     text-decoration: none;
-    color:  #968812;
-    
+    color: #968812;
+
 }
 
-.btn-cadastro:hover{
+.btn-cadastro:hover {
     text-decoration: underline;
 }
 
-.link-cadastro{
+.link-cadastro {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
 }
 
-.link-cadastro > span {
+.link-cadastro>span {
     color: #36320A;
+}
+
+.box_alerta {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: red;
+    font-weight: 600;
+    position: relative;
+}
+
+.flash_alerta{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
