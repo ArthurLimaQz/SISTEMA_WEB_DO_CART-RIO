@@ -3,6 +3,7 @@ from flask_mysqldb import MySQL
 import MySQLdb.cursors
 import bcrypt
 
+#conexão com banco de dados
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = '123456789'
@@ -46,6 +47,7 @@ def cadastro():
         mysql.connection.commit()
         session['nome'] = registro
         session['senha'] = senha
+        flash('CADASTRADO COM SUCESSO')
         return redirect(url_for('home_login')) 
     
    
