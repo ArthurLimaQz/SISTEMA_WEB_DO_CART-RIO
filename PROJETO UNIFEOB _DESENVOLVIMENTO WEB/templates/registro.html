@@ -1,112 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1 Registro Civil de Botelhos-MG</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style/box.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1 Registro Civil de Botelhos-MG</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style/box.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
-<nav class="navbar navbar-expand-lg bg-warning mt-2" >
+<nav class="navbar navbar-expand-lg bg-warning mt-2">
   <div class="container-fluid text-center">
-      <div class="p-1 m-0 border-0 bd-example">
-          <img src="SRC/Minimal_Professional_Lawyer_Firm_Justice___Law_Logo-removebg-preview.png" alt=""
-              class="img-fluid rounded float-start " width="10%" height="250">
-      </div>
-      <a class="navbar-brand bi bi-house" href="#">Inicio</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-              <li class="nav-item">
-                  <a class="nav-link active bi bi-pen" aria-current="page" href="#">Solicitar Pedido</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link bi bi-person" href="#">Nascimento</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link bi bi-valentine" href="#">Casamento</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link bi bi-clipboard-pulse" href="#">Óbito</a> <!-- Se quiser desabilitar a função só adicionar junto ao nav disabled e trocar o
+    <div class="p-1 m-0 border-0 bd-example">
+      <img src="SRC/Minimal_Professional_Lawyer_Firm_Justice___Law_Logo-removebg-preview.png" alt=""
+        class="img-fluid rounded float-start " width="10%" height="250">
+    </div>
+    <a class="navbar-brand bi bi-house" href="#">Inicio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active bi bi-pen" aria-current="page" href="#">Solicitar Pedido</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bi bi-person" href="#">Nascimento</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bi bi-valentine" href="#">Casamento</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bi bi-clipboard-pulse" href="#">Óbito</a> <!-- Se quiser desabilitar a função só adicionar junto ao nav disabled e trocar o
                   aria-disabled por href="...."-->
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link bi bi-globe-americas" aria-disabled="true">Apostilamento de HAIA</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link bi bi-telephone" aria-disabled="true">Contato</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link bi bi-person-circle" aria-disabled="true">Registrar/Login</a>
-              </li>
-          </ul>
-      </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bi bi-globe-americas" aria-disabled="true">Apostilamento de HAIA</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bi bi-telephone" aria-disabled="true">Contato</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link bi bi-person-circle" aria-disabled="true">Registrar/Login</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
+
 <body class="bg-warning-subtle text-dark">
 
   <div class="container-fluid vh-100 d-flex p-0">
     <!-- Menu lateral -->
     <div class="col-md-3 col-lg-2 bg-dark text-white d-flex flex-column p-3">
       <h6 class="text-center mb-3">REGISTROS</h6>
-      <div class="bg-warning flex-grow-1 rounded p-2 mb-3" style="overflow-y: auto;"></div>
+      <div class="bg-warning flex-grow-1 rounded p-2 mb-3" style="overflow-y: auto;">
+            {% if registros %}
+        {% for registro in registros %}
+            <div class="registro">
+                <p><strong>Nome:</strong> {{ registro.nome }}</p>
+                <p><strong>Livro:</strong> {{ registro.livro }}</p>
+                <p><strong>Folha:</strong> {{ registro.folha }}</p>
+                <p><strong>Termo:</strong> {{ registro.termo }}</p>
+                <p><strong>Data de Registro:</strong> {{ registro.data_registro }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Nenhum registro exibido.</p>
+    {% endif %}
+      </div>
       <button class="btn btn-outline-light mb-2">REGISTROS</button>
       <button class="btn btn-outline-light">Excluir</button>
     </div>
 
     <!-- Formulário -->
-    <div class="col p-4">
+    <form action="/registro" class="col p-4" method="post">
       <h2 class="fw-bold">Solicitar pedido</h2>
       <p>Preencha o formulário</p>
-
       <div class="row g-3">
         <div class="col-md-3">
-          <label class="form-label">Livro</label>
-          <input type="text" class="form-control bg-warning border-0">
+          <label class="form-label" method="post">Livro</label>
+          <input type="text" name="Livro" id="Livro" class="form-control bg-warning border-0">
         </div>
         <div class="col-md-3">
-          <label class="form-label">Folha</label>
-          <input type="text" class="form-control bg-warning border-0">
+          <label class="form-label" method="post">Folha</label>
+          <input type="text" name="Folha" id="Folha" class="form-control bg-warning border-0">
         </div>
         <div class="col-md-3">
-          <label class="form-label">Termo</label>
-          <input type="text" class="form-control bg-warning border-0">
+          <label class="form-label" method="post">Termo</label>
+          <input type="text" name="Termo" id="Termo" class="form-control bg-warning border-0">
         </div>
         <div class="col-md-3">
-          <label class="form-label">Data de registro</label>
-          <input type="date" class="form-control bg-warning border-0">
+          <label class="form-label" method="post">Data de registro</label>
+          <input type="date" name="dt_rg" id="dt_rg" class="form-control bg-warning border-0">
         </div>
 
         <div class="col-12">
-          <label class="form-label">Nome</label>
-          <input type="text" class="form-control bg-warning border-0">
+          <label class="form-label" method="post">Nome</label>
+          <input type="text" name="Nome" id="Nome" class="form-control bg-warning border-0">
         </div>
 
         <div class="col-md-6">
-          <label class="form-label">Pai</label>
-          <input type="text" class="form-control bg-warning border-0">
+          <label class="form-label" method="post">Pai</label>
+          <input type="text" name="Pai" id="Pai" class="form-control bg-warning border-0">
         </div>
         <div class="col-md-6">
-          <label class="form-label">Mãe</label>
-          <input type="text" class="form-control bg-warning border-0">
+          <label class="form-label" method="post">Mãe</label>
+          <input type="text" name="Mae" id="Mae" class="form-control bg-warning border-0">
         </div>
 
         <div class="col-md-4">
-          <label class="form-label">Data de nascimento</label>
-          <input type="date" class="form-control bg-warning border-0">
+          <label class="form-label" method="post">Data de nascimento</label>
+          <input type="date" name="dt_nascimento" id="dt_nascimento" class="form-control bg-warning border-0">
         </div>
 
         <div class="col-12">
           <button class="btn bg-dark text-white mt-3">Solicitar</button>
         </div>
       </div>
-    </div>
+    </form>
   </div>
 
 </body>
+
 </html>
