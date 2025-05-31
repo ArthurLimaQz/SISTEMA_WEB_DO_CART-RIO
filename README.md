@@ -91,7 +91,7 @@ git clone https://github.com/ArthurLimaQz/SISTEMA_WEB_DO_CART-RIO.git<br>
 
 🧪 Pip a ser instalado<br>
 
-Abra o temrinal e de o seguinte comando: **pip install -r requirements.txt**<br>
+Abra o terminal e de o seguinte comando: **pip install -r requirements.txt**<br>
 
 2️⃣ Configure o banco de dados MySQL
 
