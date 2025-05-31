@@ -89,6 +89,12 @@ cadastro.<br>
 1️⃣ Clone o repositório<br>
 git clone https://github.com/ArthurLimaQz/SISTEMA_WEB_DO_CART-RIO.git<br> 
 
+🧪 Pip a ser instalado<br>
+
+Abra o temrinal e de o seguinte comando: **pip install -r requirements.txt**<br>
+
+2️⃣ Configure o banco de dados MySQL
+
 Abra o MySQL Workbench<br>
 
 Conecte ao seu servidor MySQL (usualmente chamado de “Local instance MySQL”)<br>
@@ -96,12 +102,6 @@ Conecte ao seu servidor MySQL (usualmente chamado de “Local instance MySQL”)
 Clique em "create a new sql tab for executing queries” (ícone do SQL com um +)<br>
 
 execute o código a seguir<br>
-
-🧪 Pip a ser instalado<br>
-
-Abra o temrinal e de o seguinte comando: **pip install -r requirements.txt**<br>
-
-2️⃣ Configure o banco de dados MySQL
 
 CREATE DATABASE UNIFEOB;<br>
 USE UNIFEOB;<br>
@@ -134,6 +134,13 @@ CREATE TABLE `registro` (<br>
   KEY `FK_PESSOA_REGISTRO` (`Id_PESSOA`),<br>
   CONSTRAINT `FK_PESSOA_REGISTRO` FOREIGN KEY (`Id_PESSOA`) REFERENCES `pessoa` (`Id`)<br>
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci,<br>
+
+🔹 Abra o arquivo routes.py e preencha de acordo com o seu branco de dados:<br>
+
+   Endereço do servidor: app.config['MYSQL_HOST'] = 'localhost'<br>
+   Usuário do servidor: app.config['MYSQL_USER'] = '(COLOQUE SEU USUARIO)'<br>
+   Senha do servidor: app.config['MYSQL_PASSWORD'] = '(COLOQUE SUA SENHA)'<br>
+   Banco de dados do servidor: app.config['MYSQL_DB']='unifeob' <br>
 
 3️⃣ inicie o arquivo main.py.<br>
 copie o Running on http://127.0.0.1:5000<br>
