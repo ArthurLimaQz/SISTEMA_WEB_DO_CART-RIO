@@ -43,7 +43,7 @@ Definição: É a parte visível de um site ou aplicação, com a qual os usuár
 📌 Frameworks/Bibliotecas: React, Vue.js, Angular<br>
 📌 Responsividade e design são fundamentais.<br>
 
-➡ Benefício: Criação de interfaces intuitivas e responsivas, melhoia da experiência do usuário (UX), permite que o site funcione bem em diferentes dispositivos (mobile, tablet, desktop).<br>
+➡ Benefício: Criação de interfaces intuitivas e responsivas, melhoria da experiência do usuário (UX), permite que o site funcione bem em diferentes dispositivos (mobile, tablet, desktop).<br>
 
 2️⃣ Back-end (Desenvolvimento do Lado do Servidor)<br>
 Definição: Lida com a lógica, autenticação, armazenamento e manipulação de dados.<br>
@@ -65,7 +65,7 @@ Definição: Armazena e organiza os dados da aplicação.<br>
 🔹 Pré-requisitos<br><br>
 Python 3.13.3<br>
 MySQL<br>
-Freamework Flask<br>
+Framework Flask<br>
 HTML5<br>
 CSS3<br>
 
@@ -89,11 +89,11 @@ cadastro.<br>
 1️⃣ Clone o repositório<br>
 git clone https://github.com/ArthurLimaQz/SISTEMA_WEB_DO_CART-RIO.git<br> 
 
-🧪 Pip a ser instalado<br>
+🧪 Instale as dependências<br>
 
-Abra o terminal e de o seguinte comando: **pip install -r requirements.txt**<br>
+Abra o terminal e dê o seguinte comando: **pip install -r requirements.txt**<br>
 
-2️⃣ Configure o banco de dados MySQL
+2️⃣ Configure o banco de dados no MySQL Workbench
 
 Abra o MySQL Workbench<br>
 
@@ -135,10 +135,10 @@ CREATE TABLE `registro` (<br>
   CONSTRAINT `FK_PESSOA_REGISTRO` FOREIGN KEY (`Id_PESSOA`) REFERENCES `pessoa` (`Id`)<br>
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci,<br>
 
-🔹 Abra o arquivo routes.py e preencha de acordo com o seu branco de dados:<br>
+🔹 Ajuste as configurações em routes.py:<br>
 
    Endereço do servidor: app.config['MYSQL_HOST'] = 'localhost'<br>
-   Usuário do servidor: app.config['MYSQL_USER'] = '(COLOQUE SEU USUARIO)'<br>
+   Usuário do servidor: app.config['MYSQL_USER'] = '(COLOQUE SEU USUÁRIO)'<br>
    Senha do servidor: app.config['MYSQL_PASSWORD'] = '(COLOQUE SUA SENHA)'<br>
    Banco de dados do servidor: app.config['MYSQL_DB']='unifeob' <br>
 
@@ -156,7 +156,7 @@ edição, exclusão de registros e controle de usuários
 ✅ Banco de Dados MySQL
 ✅ HTML, CSS
 
-ALUNOS:<br>
+👥 Desenvolvedores<br>
 Arthur Lima de Queiroz RA 1012023200044 <br>
 Paulo Henrique Esberci RA 1012023200070<br>
 Vinicius RA <br>
