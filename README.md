@@ -2,7 +2,7 @@
 
 📋 Sobre o Projeto
 
-Este projeto é um Sistema Web de registro de cartório desenvolvido com o Framework Flask, Frontend HTML5, CSS3 e backend python e MySQL<br>para armazenar os dados. Ele permite cadastrar usuarios, registros e visualizar o ultimo registro de forma intuitiva.
+Este projeto é um Sistema Web de registro de cartório desenvolvido com o Framework Flask, Frontend HTML5, CSS3 e backend python e MySQL para armazenar os dados. Ele permite cadastrar usuarios, registros e visualizar o ultimo registro de forma intuitiva.
 
 📌 Funcionalidades
 
