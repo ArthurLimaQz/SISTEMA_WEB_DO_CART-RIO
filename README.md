@@ -2,7 +2,7 @@
 
 📋 Sobre o Projeto
 
-Este projeto é um Sistema Web de registro de cartório desenvolvido com o Framework Flask, Frontend HTML5, CSS3 e backend python e MySQL<br>para armazenar os dados. Ele permite cadastrar usuarios, registros e visualizar o ultimo registro de forma intuitiva.
+Este projeto é um Sistema Web de registro de cartório desenvolvido com o Framework Flask, Frontend HTML5, CSS3 e backend python e MySQL para armazenar os dados. Ele permite cadastrar usuarios, registros e visualizar o ultimo registro de forma intuitiva.
 
 📌 Funcionalidades
 
@@ -15,137 +15,85 @@ dos pais e etc.<br>
 
 📌 Estrutura do Código
 
-O projeto segue os princípios da Programação Orientada a Objetos (POO), aplicando Abstração, Herança, Polimorfismo e Encapsulamento.
+O projeto é voltada para a resolução de uma necessidade real, utilizando as tecnologias HTML, CSS, PYTHON, FLASK.
 
-📂 src/<br>
- ├── 📂 Controller/<br>
- │    ├── RegistroController.java
- <br>├── 📂 Dao/<br>
- │    ├── RegistroDao.java
- <br>├── 📂 Models/<br>
- │    ├── Pessoa.java<br>
- │    ├── Registro.java<br>
- │    ├── Conexao.java
- <br>├── 📂 View/<br>
- │    ├── RegistroGUI.java<br>
- │    ├── EntradaView.java
+📂 PROJETO UNIFEOB _DESENVOLVIMENTO WEB/<br>
+ ├── 📂 Banco de dados/<br>
+ │    ├── banco de dados.sql<br>
+ ├── 📂 static/<br>
+ │    ├── imagens/<br>
+ │    │    ├── Minimal Professional Lawyer Firm Justice & Law Logo.png<br>
+ │    ├── box.css<br>
+ │    ├── registro.css
+ <br>├── 📂 templates/<br>
+ │    ├── cadastro.html<br>
+ │    ├── index.html<br>
+ │    ├── registro.html
+ <br>├── main.py/<br>
+ ├── models.py<br>
+ ├── routes.py
 
-📌 Aplicação dos Conceitos de POO
+📌 Aplicação do Desenvolvimento Web<br>
 
-1️⃣ Abstração
-Definição: A abstração permite criar classes genéricas que modelam conceitos do mundo real, escondendo detalhes internos e expondo apenas funcionalidades essenciais.
-
-📌 No código: Criamos a classe abstrata Pessoa, que define atributos comuns para qualquer pessoa (nome, data de nascimento, sexo). Essa classe serve como modelo para a classe Registro, garantindo que todas as pessoas cadastradas tenham essas características básicas.
-
-public abstract class Pessoa {
-    protected String nome;
-    protected LocalDate dataNascimento;
-    protected String sexo;
-
-    public Pessoa(String nome, LocalDate dataNascimento, String sexo) {
-        this.nome = nome;
-        this.dataNascimento = dataNascimento;
-        this.sexo = sexo;
-    }
-
-    public abstract void exibirInformacoes(); // Método abstrato
+1️⃣ Front-end (Desenvolvimento do Lado do Cliente)<br>
+Definição: É a parte visível de um site ou aplicação, com a qual os usuários interagem diretamente.<br>
 
 
-➡ Benefício: Permite que outras classes derivem dessa estrutura sem precisar duplicar código.
+📌 Tecnologias: HTML, CSS, JavaScript<br>
+📌 Frameworks/Bibliotecas: React, Vue.js, Angular<br>
+📌 Responsividade e design são fundamentais.<br>
 
-2️⃣ Herança
-Definição: A herança permite que uma classe reutilize atributos e métodos de outra classe.
+➡ Benefício: Criação de interfaces intuitivas e responsivas, melhoria da experiência do usuário (UX), permite que o site funcione bem em diferentes dispositivos (mobile, tablet, desktop).<br>
 
-📌 No código: A classe Registro herda de Pessoa, aproveitando seus atributos e adicionando novas informações específicas, como termo, livro e datas.
-public class Registro extends Pessoa {
-    private int termo;
-    private String livro;
-    private int folha;
-    private LocalDate dataRegistro;
-    private String nomeGenitor;
-    private String nomeGenitora;
+2️⃣ Back-end (Desenvolvimento do Lado do Servidor)<br>
+Definição: Lida com a lógica, autenticação, armazenamento e manipulação de dados.<br>
 
-    public Registro(int termo, String livro, int folha, LocalDate dataRegistro, 
-                    String nome, String nomeGenitor, String nomeGenitora, 
-                    LocalDate dataNascimento, String sexo) {
-        super(nome, dataNascimento, sexo); // Chama o construtor da superclasse (Pessoa)
-        this.termo = termo;
-        this.livro = livro;
-        this.folha = folha;
-        this.dataRegistro = dataRegistro;
-        this.nomeGenitor = nomeGenitor;
-        this.nomeGenitora = nomeGenitora;
-    }
+📌 Linguagens: Python, Java, PHP, Node.js<br>
+📌 Frameworks:  Flask, Django, Spring Boot, Express.js<br>
 
-➡ Benefício: Evita duplicação de código e mantém uma estrutura organizada.
+➡ Benefício: Garante o funcionamento interno da aplicação, mantém a segurança e o controle de acesso aos dados, possibilita integração com sistemas externos e APIs.<br>
 
-3️⃣ Polimorfismo
-Definição: O polimorfismo permite que um mesmo método funcione de maneira diferente dependendo da classe que o implementa.
+3️⃣ Banco de Dados<br>
+Definição: Armazena e organiza os dados da aplicação.<br>
 
-📌 No código:
+📌 Relacionais: MySQL, PostgreSQL<br>
+📌 Não-relacionais:  MongoDB, Firebase<br>
 
-A classe RegistroDao aceita qualquer objeto do tipo Pessoa no método save(), mas só insere no banco se for um Registro.
-Isso permite futuras expansões, como o cadastro de outros tipos de pessoas (exemplo: Funcionário, Cliente, etc.).<br>
-public void save(Pessoa pessoa) {<br>
-    if (pessoa instanceof Registro) {<br>
-        Registro registro = (Registro) pessoa;<br>
-        String sql = "INSERT INTO registro (termo, livro, folha, data_registro, nome, nome_genitor, nome_genitora, data_nascimento, sexo) " +<br>
-                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+➡ Benefício: Permite o armazenamento estruturado e eficiente de informações, garante recuperação rápida e precisa dos dados, facilita análises e relatórios com base nas informações salvas<br>
 
-        try (PreparedStatement ps = connection.prepareStatement(sql)) {
-            ps.setInt(1, registro.getTermo());
-            ps.setString(2, registro.getLivro());
-            ps.setInt(3, registro.getFolha());
-            ps.setDate(4, java.sql.Date.valueOf(registro.getDataRegistro()));
-            ps.setString(5, registro.getNome());
-            ps.setString(6, registro.getNomeGenitor());
-            ps.setString(7, registro.getNomeGenitora());
-            ps.setDate(8, java.sql.Date.valueOf(registro.getDataNascimento()));
-            ps.setString(9, registro.getSexo());
-
-            ps.executeUpdate();
-            System.out.println("✅ Registro salvo com sucesso!");
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-➡ Benefício: Aumenta a flexibilidade do código, permitindo reutilização e expansão.
-
-4️⃣ Encapsulamento
-Definição: O encapsulamento protege os dados dentro das classes, permitindo o acesso somente por meio de métodos específicos.
-
-📌 No código:
-
-Todos os atributos das classes são privados (private).<br>
-O acesso aos atributos é feito por métodos get e set, garantindo controle sobre os dados.<br>
-public int getTermo() {<br>
-    return termo;<br>
-}
-
-public String getLivro() {<br>
-    return livro;<br>
-}
-
-public int getFolha() {<br>
-    return folha;<br>
-}
-
-public LocalDate getDataRegistro() {
-    return dataRegistro;
-}
-➡ Benefício: Impede alterações indesejadas nos dados e melhora a segurança do sistema.<br>
-📌 Como Executar o Projeto<br>
-🔹 Pré-requisitos<br>
-Java 8+<br>
+📌 Como Executar o Projeto<br><br>
+🔹 Pré-requisitos<br><br>
+Python 3.13.3<br>
 MySQL<br>
-Bibliotecas JDBC<br>
-IDE (IntelliJ, VS Code, NetBeans, Eclipse)<br>
+Framework Flask<br>
+HTML5<br>
+CSS3<br>
+
+📋 Conceitos Aplicados
+
+ 🔒 Segurança<br>
+ • As senhas dos usuários são criptografadas com bcrypt, garantindo a segurança dos dados 
+ sensíveis.<br>
+
+ 🧠Lógica de Autenticação<br>
+ • O login é simples e validado diretamente no back-end.<br>
+ • Apenas usuários com a senha correta acessam a área de registros.<br>
+ 
+ 💾 Integração com Banco de Dados<br>
+ • O sistema interage diretamente com o MySQL para inserir e recuperar dados.<br>
+ • Utiliza cursor() e comandos SQL para manipulação das tabelas pessoa, registro e 
+cadastro.<br>
 
 🔹 Passo a passo<br>
+
 1️⃣ Clone o repositório<br>
-git clone https://github.com/ArthurLimaQz/PROJETO-UNIFEOB.git<br>
-inicie o arquivo RegistroGUI
+git clone https://github.com/ArthurLimaQz/SISTEMA_WEB_DO_CART-RIO.git<br> 
+
+🧪 Instale as dependências<br>
+
+Abra o terminal e dê o seguinte comando: **pip install -r requirements.txt**<br>
+
+2️⃣ Configure o banco de dados no MySQL Workbench
 
 Abra o MySQL Workbench<br>
 
@@ -155,43 +103,62 @@ Clique em "create a new sql tab for executing queries” (ícone do SQL com um +
 
 execute o código a seguir<br>
 
-2️⃣ Configure o banco de dados MySQL
-
 CREATE DATABASE UNIFEOB;<br>
 USE UNIFEOB;<br>
-CREATE TABLE PESSOA (<br>
-    ID INT PRIMARY KEY AUTO_INCREMENT,<br>
-    Nome VARCHAR(50) NOT NULL,<br>
-    Sexo ENUM('M', 'F', 'Outro') NOT NULL,<br>
-    Data_nascimento DATE,<br>
-    Nome_genitor VARCHAR(50),<br>
-    Nome_genitora VARCHAR(50)<br>
-);<br>
-CREATE TABLE REGISTRO (<br>
-    ID INT PRIMARY KEY AUTO_INCREMENT,<br>
-    Termo INT NOT NULL,<br>
-    Livro VARCHAR(10) NOT NULL,<br>
-    Folha INT NOT NULL,<br>
-    Data_registro DATE NOT NULL,<br>
-    Id_Pessoa INT NOT NULL,<br>
-    CONSTRAINT FK_PESSOA_REGISTRO FOREIGN KEY (Id_Pessoa) REFERENCES PESSOA(ID) ON DELETE CASCADE<br>
-);<br>
+CREATE TABLE `cadastro` (<br>
+  `id` int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',<br>
+  `registro` varchar(100) DEFAULT NULL,<br>
+  `senha` varchar(255) DEFAULT NULL,<br>
+  PRIMARY KEY (`id`)<br>
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci,<br>
 
-3️⃣ Compile e execute a interface gráfica
-javac src/View/RegistroGUI.java
-java src/View/RegistroGUI
+CREATE TABLE `pessoa` (<br>
+  `Id` int NOT NULL AUTO_INCREMENT,<br>
+  `NOME` varchar(50) NOT NULL,<br>
+  `SEXO` enum('M','F','Outro') NOT NULL,<br>
+  `DATA_NASCIMENTO` date DEFAULT NULL,<br>
+  `NOME_GENITOR` varchar(50) DEFAULT NULL,<br>
+  `NOME_GENITORA` varchar(50) DEFAULT NULL,<br>
+  `cadastro_id` int DEFAULT NULL,<br>
+  PRIMARY KEY (`Id`),<br>
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci,<br>
 
-📌 Conclusão
-Este projeto implementa os conceitos fundamentais de POO (Programação Orientada a Objetos) em um sistema funcional de registro de cartório.
+CREATE TABLE `registro` (<br>
+  `Id` int NOT NULL AUTO_INCREMENT,<br>
+  `TERMO` int NOT NULL,<br>
+  `LIVRO` varchar(10) NOT NULL,<br>
+  `FOLHA` int NOT NULL,<br>
+  `DATA_REGISTRO` date DEFAULT NULL,<br>
+  `Id_PESSOA` int DEFAULT NULL,<br>
+  PRIMARY KEY (`Id`),<br>
+  KEY `FK_PESSOA_REGISTRO` (`Id_PESSOA`),<br>
+  CONSTRAINT `FK_PESSOA_REGISTRO` FOREIGN KEY (`Id_PESSOA`) REFERENCES `pessoa` (`Id`)<br>
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci,<br>
+
+🔹 Ajuste as configurações em routes.py:<br>
+
+   Endereço do servidor: app.config['MYSQL_HOST'] = 'localhost'<br>
+   Usuário do servidor: app.config['MYSQL_USER'] = '(COLOQUE SEU USUÁRIO)'<br>
+   Senha do servidor: app.config['MYSQL_PASSWORD'] = '(COLOQUE SUA SENHA)'<br>
+   Banco de dados do servidor: app.config['MYSQL_DB']='unifeob' <br>
+
+3️⃣ inicie o arquivo main.py.<br>
+copie o Running on http://127.0.0.1:5000<br>
+cole no navegador.<br>
+
+📌 Conclusão<br>
+Este projeto demonstra uma aplicação web básica com autenticação e persistência de dados. É um 
+bom exemplo do uso de Flask com MySQL e pode ser expandido com funcionalidades como 
+edição, exclusão de registros e controle de usuários
 
 🚀 Tecnologias utilizadas:
-✅ Java com Swing
+✅ Python com Flask
 ✅ Banco de Dados MySQL
-✅ Arquitetura MVC
+✅ HTML, CSS
 
-ALUNOS:<br>
+👥 Desenvolvedores<br>
 Arthur Lima de Queiroz RA 1012023200044 <br>
 Paulo Henrique Esberci RA 1012023200070<br>
-Matheus Ribeiro Ferreira RA 1012023100592<br>
+Vinicius RA <br>
 Gabriel Silva Claro Batista RA 1012023200171
 
