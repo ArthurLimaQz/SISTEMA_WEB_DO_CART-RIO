@@ -22,14 +22,22 @@ def home_login():
 @app.route('/submit', methods=['POST'])
 def login(): 
        
-    nome = request.form.get('login')
+    nome = request.form.get('login')  # O campo do formulário ainda se chama 'login'
     senha = request.form.get('password')
 
-    if nome == "admin" and senha == "admin":
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute("SELECT * FROM cadastro WHERE registro = %s", (nome,))
+    usuario = cursor.fetchone()
+
+    if usuario and bcrypt.checkpw(senha.encode('utf-8'), usuario['senha'].encode('utf-8')):
+        # Login bem-sucedido
+        session['usuario_id'] = usuario['id']
+        session['usuario_nome'] = usuario['registro']
         return render_template("registro.html")
     else:
-        flash('USUARIO INVALIDO')
+        flash('USUÁRIO INVÁLIDO')
         return redirect('/')
+
     
 
 @app.route('/cadastro', methods=['GET', 'POST']) #O @no python é dado como decoration, no caso ele da uma funcionalidade para a linha que está a baixo! 
