@@ -159,6 +159,6 @@ edição, exclusão de registros e controle de usuários
 👥 Desenvolvedores<br>
 Arthur Lima de Queiroz RA 1012023200044 <br>
 Paulo Henrique Esberci RA 1012023200070<br>
-Vinicius RA <br>
+vinícius da silva fernandes RA 24001801 <br>
 Gabriel Silva Claro Batista RA 1012023200171
 
