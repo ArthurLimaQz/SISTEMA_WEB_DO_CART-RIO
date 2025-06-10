@@ -120,7 +120,7 @@ CREATE TABLE `pessoa` (<br>
   `NOME_GENITOR` varchar(50) DEFAULT NULL,<br>
   `NOME_GENITORA` varchar(50) DEFAULT NULL,<br>
   `cadastro_id` int DEFAULT NULL,<br>
-  PRIMARY KEY (`Id`),<br>
+  PRIMARY KEY (`Id`)<br>
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;<br>
 
 CREATE TABLE `registro` (<br>
