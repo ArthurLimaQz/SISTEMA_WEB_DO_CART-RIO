@@ -8,7 +8,7 @@ app.config['MYSQL_HOST'] = 'tramway.proxy.rlwy.net'
 app.config['MYSQL_PORT'] = 20213 
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'SCVIhTijWyUhOuFktcDhLpqDrLuussYi'
-app.config['MYSQL_DB']='unifeob' 
+app.config['MYSQL_DB']='railway' 
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 
