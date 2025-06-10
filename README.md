@@ -110,7 +110,7 @@ CREATE TABLE `cadastro` (<br>
   `registro` varchar(100) DEFAULT NULL,<br>
   `senha` varchar(255) DEFAULT NULL,<br>
   PRIMARY KEY (`id`)<br>
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci,<br>
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;<br>
 
 CREATE TABLE `pessoa` (<br>
   `Id` int NOT NULL AUTO_INCREMENT,<br>
@@ -121,7 +121,7 @@ CREATE TABLE `pessoa` (<br>
   `NOME_GENITORA` varchar(50) DEFAULT NULL,<br>
   `cadastro_id` int DEFAULT NULL,<br>
   PRIMARY KEY (`Id`),<br>
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci,<br>
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;<br>
 
 CREATE TABLE `registro` (<br>
   `Id` int NOT NULL AUTO_INCREMENT,<br>
@@ -133,7 +133,7 @@ CREATE TABLE `registro` (<br>
   PRIMARY KEY (`Id`),<br>
   KEY `FK_PESSOA_REGISTRO` (`Id_PESSOA`),<br>
   CONSTRAINT `FK_PESSOA_REGISTRO` FOREIGN KEY (`Id_PESSOA`) REFERENCES `pessoa` (`Id`)<br>
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci,<br>
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci<br>
 
 🔹 Ajuste as configurações em routes.py:<br>
 
